@@ -1,0 +1,84 @@
+Możliwości rozwoju:
+1. nowa klasa coordinations - do obsługi współrzędnych
+2. kilka walidacji różnych zmiennych funkcją do walidacji, zamiast powielać kod, mogłem zrobić funkcję validate(user_input, validation_function)
+3. 2 razy funkcja robiąca to samo: w klasie battleship i ships: is_valid_input_coordinates i is_valid_start_coordination_of_ship
+4. powielona funkcja  converte_coordinates_a1_to_00 w klasie board i ships (rozwiązanie zagnieżdzienie klas albo wydzielenie funkcjonalności do osobnej klasy coordinations z pkt. 1.)
+
+
+Napotkane komplikacje:
+1. Nowa klasa Ship w II połowie czasu realizacji projektu
+
+2. komentarz do coomitów na github'ie
+
+Kłopoty:
+0. kłopoty z rozplanowanie klas, aby miały logiczną całość, kilka razy, musiałem w trakcie pisania przenosić pewne funkcje do nowej albo innej klasy
+1.     print(board1[5])
+TypeError: 'Board' object is not subscriptable
+
+działa: 
+    board1 = Board(10)
+    #print(board1[5])
+    board = board1.get_board()
+    print(board[5])
+
+
+    roman.pindela: Also: print(Battleship_game.player1_ships.ships_board[5][5])
+[10:49 AM] roman.pindela: doesn't work
+[10:49 AM] roman.pindela: .ships_board is list something like this
+[10:50 AM] roman.pindela: [[0,0,0,0,0], [0,0,0,0,0] , [0,0,0,0,0] , [0,0,0,0,0] , [0,0,0,0,0] ] for board size = 5, but in my example size is 10
+[10:55 AM] roman.pindela: here is sth that worked for me
+[10:55 AM] roman.pindela: board1 = Board(10)
+    #print(board1[5])
+    board = board1.get_board()
+    print(board[5])
+[10:55 AM] roman.pindela: implementing .get_board() method returning self.board
+[10:56 AM] roman.pindela: I don't know wy though
+
+
+
+------------------
+moduły nie używane:
+
+# Moduł: Saved games
+
+class Scoreboard:
+    def __init__(self, scoreboard_file: str = "scoreboard.csv") -> None:
+        self.players_list = []
+    
+    
+
+    def load_players_scores() -> None:
+        pass
+    def save_players_scores() -> None:
+        pass
+    def insert_player() -> None:
+        pass
+    def remove_player() -> None:
+        pass
+    def print_players_scores() -> None:
+        pass
+
+class Saved_games_state:
+    def __init__(self, file_for_saved_games: str = "saves_games.csv") -> None:
+        pass
+
+    def load_saved_games_state_from_file(self) -> None:
+        pass
+
+    def save_game_state(self) -> None:
+        pass
+
+    def load_saved_game_state(self) -> None:
+        pass
+
+    def print_available_saved_games_state(self) -> None:
+        pass
+
+    def delete_saved_game_state(self) -> None:
+        pass
+
+    def erase_saved_games(self) -> None:
+        pass
+
+    # player1, player2, data, player1_board, player2_board, player1_ships, player2_ships)
+
